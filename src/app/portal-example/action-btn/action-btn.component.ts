@@ -1,4 +1,4 @@
-import { CdkPortal, DomPortalHost } from '@angular/cdk/portal';
+import { CdkPortal, DomPortalHost, DomPortalOutlet } from '@angular/cdk/portal';
 import {
   AfterViewInit,
   ApplicationRef,
@@ -22,7 +22,7 @@ export class ActionBtnComponent implements AfterViewInit, OnDestroy {
   @ViewChild(CdkPortal)
   private portal: CdkPortal;
 
-  private host: DomPortalHost;
+  private host: DomPortalOutlet;
 
   constructor(
     private applicationRef: ApplicationRef,
@@ -36,7 +36,7 @@ export class ActionBtnComponent implements AfterViewInit, OnDestroy {
     }
 
   ngAfterViewInit(): void {
-      this.host = new DomPortalHost(
+      this.host = new DomPortalOutlet(
         document.querySelector('#action'),
         this.componentFactoryResolver,
         this.applicationRef,
