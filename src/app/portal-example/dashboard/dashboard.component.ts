@@ -18,6 +18,6 @@ export class DashboardComponent {
   constructor(private router: Router) { }
 
   goToHome(): void {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('portal/home');
   }
 }

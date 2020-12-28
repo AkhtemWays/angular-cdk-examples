@@ -13,12 +13,12 @@ import { Router } from '@angular/router';
     </div>
   `
 })
-export class HomeComponent{
+export class HomeComponent {
 
   constructor(private router: Router) { }
 
   goToDashboard(): void {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('portal/dashboard');
   }
 
 }

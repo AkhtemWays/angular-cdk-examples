@@ -1,18 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home', component: HomeComponent
-  },
-  {
-    path: 'dashboard', component: DashboardComponent
-  },
-  {
-    path: '', redirectTo: '/home', pathMatch: 'full'
-  }
+  {path: 'portal', loadChildren: () => import('./portal-example/portal-example.module').then(m => m.PortalExampleModule)},
+  {path: 'dialog', loadChildren: () => import('./dialog/dialog.module').then(m => m.DialogModule)},
+  {path: '', redirectTo: '/portal', pathMatch: 'full'}
 ];
 
 @NgModule({

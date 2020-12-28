@@ -22,7 +22,7 @@ export class ActionBtnComponent implements AfterViewInit, OnDestroy {
   @ViewChild(CdkPortal)
   private portal: CdkPortal;
 
-  private host: DomPortalOutlet;
+  private host: DomPortalHost;
 
   constructor(
     private applicationRef: ApplicationRef,
@@ -36,12 +36,13 @@ export class ActionBtnComponent implements AfterViewInit, OnDestroy {
     }
 
   ngAfterViewInit(): void {
-      this.host = new DomPortalOutlet(
-        document.querySelector('#action'),
-        this.componentFactoryResolver,
-        this.applicationRef,
-        this.injector
-      );
-      this.host.attach(this.portal);
+    const elementRef: Element = document.querySelector('#action');
+    this.host = new DomPortalHost(
+      elementRef,
+      this.componentFactoryResolver,
+      this.applicationRef,
+      this.injector
+    );
+    this.host.attach(this.portal);
     }
 }

@@ -1,28 +1,19 @@
 import { A11yModule } from '@angular/cdk/a11y';
-import { PortalModule } from '@angular/cdk/portal';
+import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { ActionBtnComponent } from './action-btn/action-btn.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { PortalExampleModule } from './portal-example/portal-example.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    ActionBtnComponent,
-    DashboardComponent,
-    NavbarComponent
+    AppComponent
   ],
-  entryComponents: [ActionBtnComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSliderModule,
     A11yModule,
     MatButtonModule,
-    PortalModule
+    PortalExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
